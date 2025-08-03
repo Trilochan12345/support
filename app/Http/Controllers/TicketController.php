@@ -22,6 +22,7 @@ public function store(Request $request)
     $validated = $request->validate([
         'subject' => 'required|string|max:255',
         'message' => 'required|string',
+        'priority' => 'required|string',
     ]);
 
     // Assuming you have a Ticket model
@@ -29,6 +30,7 @@ public function store(Request $request)
         'user_id' => auth()->id(),
         'subject' => $validated['subject'],
         'message' => $validated['message'],
+        'priority'=>$validated['priority'],
         'status' => 'open',
     ]);
 

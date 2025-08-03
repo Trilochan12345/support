@@ -22,7 +22,7 @@
                     <td>{{ $ticket->id }}</td>
                     <td>{{ $ticket->user->name ?? 'Unknown' }}</td>
                     <td>{{ $ticket->subject }}</td>
-                    <td>{{ ucfirst($ticket->priority) }}</td>
+                    <td>{{ $ticket->priority }}</td>
                     <td>
                         <span class="badge bg-{{ $ticket->status === 'closed' ? 'danger' : ($ticket->status === 'in progress' ? 'warning' : 'success') }}">
                             {{ ucfirst($ticket->status) }}
